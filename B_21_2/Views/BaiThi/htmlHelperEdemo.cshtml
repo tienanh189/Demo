@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "htmlHelperEdemo";
+    Layout = "~/Views/Shared/LeTienAnh_Layout.cshtml";
+}
+@model  B_21_2.Models.User
+@{
+    ViewBag.Title = "userForm";
+}
+<h2>htmlHelperEdemo</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true);
+    <div>@Html.LabelFor(model => model.Name)</div>
+    <div>@Html.EditorFor(model => model.Name)</div>
+    <div>@Html.LabelFor(model => model.Address)</div>
+    <div>@Html.EditorFor(model => model.Address)</div>
+    <div>@Html.LabelFor(model => model.Email)</div>
+    <div>@Html.EditorFor(model => model.Email)</div>
+    <br />
+    <p><input type="submit" value="Create" /></p>
+}
+
+
